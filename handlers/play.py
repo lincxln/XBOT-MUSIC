@@ -126,7 +126,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     & filters.group
     & ~ filters.edited
 )
-async def album(client, message):
+async def playlist(client, message):
     global que
     queue = que.get(message.chat.id)
     if not queue:
@@ -142,7 +142,7 @@ async def album(client, message):
     temp.pop(0)
     if temp:
         msg += '\n\n'
-        msg += '**Queue**'
+        msg += '**Antrian**'
         for song in temp:
             name = song[0]
             usr = song[1].mention(style='md')
