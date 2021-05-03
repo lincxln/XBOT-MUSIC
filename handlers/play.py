@@ -397,7 +397,7 @@ async def m_cb(b, cb):
             await cb.answer('Obrolan tidak terhubung!', show_alert=True)
 
 @Client.on_message(command("mainkan") & other_filters)
-async def mainkan(_, message: Message):
+async def play(_, message: Message):
     global que
     lel = await message.reply("🔄 **Sedang Memproses**")
     administrators = await get_administrators(message.chat)
@@ -551,7 +551,7 @@ async def deezer(client: Client, message_: Message):
                    invitelink = await client.export_chat_invite_link(chid)
                except:
                    await lel.edit(
-                       "<b>Add me as admin of yor group first</b>",
+                       "<b>Tambahkan saya sebagai admin grup terlebih dahulu</b>",
                    )
                    return
 
